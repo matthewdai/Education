@@ -1,0 +1,49 @@
+﻿<Page x:Class="Education.SAT.Math.Pages.AddChoiceQuestion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Education.SAT.Math.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AddChoiceQuestion">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1">
+            <Label>Question</Label>
+            <TextBox Style="{StaticResource questionTextBoxStyle}" Text="{Binding Question}"></TextBox>
+
+            <Label>Choice 1</Label>
+            <TextBox Text="{Binding Choices[0]}"></TextBox>
+
+            <Label>Choice 2</Label>
+            <TextBox Text="{Binding Choices[1]}"></TextBox>
+
+            <Label>Choice 3</Label>
+            <TextBox Text="{Binding Choices[2]}"></TextBox>
+
+            <Label>Choice 4</Label>
+            <TextBox Text="{Binding Choices[3]}"></TextBox>
+
+            <Label>Choice 5</Label>
+            <TextBox Text="{Binding Choices[4]}"></TextBox>
+
+            <Label>Correct Answer</Label>
+            <TextBox></TextBox>
+
+        </StackPanel>
+
+        <Label Style="{StaticResource titleLabelStyle}">Add a Question</Label>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="Add_Click">Add</Button>
+            <Button>Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Page>
