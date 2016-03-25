@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Education.Data;
+using Education.SAT.Math.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,16 @@ namespace Education.SAT.Math
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Loaded += MainWindow_Loaded;
         }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var page = new AddChoiceQuestion();
+
+            frame.NavigationService.Navigate(page); 
+        }
+
     }
 }
