@@ -11,7 +11,7 @@ namespace Education.Data.Concreat
     {
         public string Question { get; set; }
 
-        public string[] Choices { get; set; }
+        public List<string> Choices { get; set; }
 
         public string Answer { get; set; }
     }

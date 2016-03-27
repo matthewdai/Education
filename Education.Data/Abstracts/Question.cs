@@ -8,6 +8,6 @@ namespace Education.Data.Abstracts
 {
     public abstract class Question
     {
-        public string _id { get; set; }
+        public string id { get; set; }
     }
 }

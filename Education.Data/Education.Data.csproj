@@ -49,8 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\IQuestionsRepository.cs" />
     <Compile Include="Abstracts\Question.cs" />
     <Compile Include="Concreat\ChoiceQuestion.cs" />
+    <Compile Include="Concreat\QuestionsRepository.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Shared.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
