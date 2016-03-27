@@ -15,10 +15,11 @@ namespace Education.Data.Helpers
         public static Question CreateQuestion(BsonDocument data)
         {
             var q = new ChoiceQuestion();
+                       
 
             q.id = data.GetValue("_id").ToString();
 
-            q.Question = data.GetValue("question").ToString();
+            q.Question = data.GetValue("Question").ToString();
 
             return q;
 

@@ -18,13 +18,13 @@ namespace Education.Data.Concreat
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public IEnumerable<Question> GetQuestions(BsonDocument filter)
+        public IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter)
         {
             var collection = Shared.GetSharedSingleton._database.GetCollection<BsonDocument>("questions");
 
-            //var filter = null; // Builders<BsonDocument>.Filter();
+            //FilterDefinition<BsonDocument> gfilter = Builders<BsonDocument>.Filter.Empty;
 
-            var result = collection.Find(null).ToList();
+            var result = collection.Find(filter).ToList();
 
             var list = new List<Question>();
 
@@ -45,7 +45,23 @@ namespace Education.Data.Concreat
         /// <param name="question"></param>
         public void AddQuestion(Question question)
         {
-            throw new NotImplementedException();
+            var q = question as ChoiceQuestion;
+
+            if (q != null)
+            {
+                var doc = new BsonDocument();
+                doc.Add("Question", q.Question);
+                //doc.Add("Question", )
+
+                doc.Add("Choices", new BsonArray(q.Choices));
+
+                doc.Add("Answer", q.Answer);
+
+                var collection = Shared.GetSharedSingleton._database.GetCollection<BsonDocument>("questions");
+
+                collection.InsertOne(doc);
+            }
+
         }
 
 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Education.SAT.Math", "Educa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Education.Data", "Education.Data\Education.Data.csproj", "{2FF1EC09-A5A6-417A-8D19-9722C61D04CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Education.Test", "Education.Test\Education.Test.csproj", "{66B11F4E-7565-482E-BD18-6A351CA47930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2FF1EC09-A5A6-417A-8D19-9722C61D04CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF1EC09-A5A6-417A-8D19-9722C61D04CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF1EC09-A5A6-417A-8D19-9722C61D04CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66B11F4E-7565-482E-BD18-6A351CA47930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B11F4E-7565-482E-BD18-6A351CA47930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B11F4E-7565-482E-BD18-6A351CA47930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B11F4E-7565-482E-BD18-6A351CA47930}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

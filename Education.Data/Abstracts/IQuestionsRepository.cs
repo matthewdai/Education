@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Education.Data.Abstracts
         void AddQuestion(Question question);
 
 
-        IEnumerable<Question> GetQuestions(BsonDocument filter);
+        IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter);
 
 
     }
