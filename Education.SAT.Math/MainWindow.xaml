@@ -6,5 +6,19 @@
         xmlns:local="clr-namespace:Education.SAT.Math"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="525">
-    <Frame x:Name="frame" Margin="10 0"></Frame>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Add Question" Click="AddQuestion_Click" />
+            <MenuItem Header="Query Question" Click="QueryQuestion_Click" />
+        </Menu>
+        
+        <Frame x:Name="frame" Grid.Row="1" Padding="10 0"></Frame>
+    </Grid>
+    
 </Window>

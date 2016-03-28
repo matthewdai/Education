@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Education.Data.Abstracts
 {
-    interface IQuestionsRepository
+    public interface IQuestionsRepository
     {
 
         void UpdateQuestion(Question question);
@@ -18,7 +18,7 @@ namespace Education.Data.Abstracts
         void AddQuestion(Question question);
 
 
-        IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter);
+        IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter = null);
 
 
     }

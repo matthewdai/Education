@@ -1,4 +1,5 @@
 ﻿using Education.Data;
+using Education.Data.Concreat;
 using Education.SAT.Math.Pages;
 using System;
 using System.Collections.Generic;
@@ -31,10 +32,19 @@ namespace Education.SAT.Math
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var page = new AddChoiceQuestion();
-
-            frame.NavigationService.Navigate(page); 
         }
 
+
+        private void AddQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            var page = new AddChoiceQuestion(new QuestionsRepository());
+            frame.NavigationService.Navigate(page);
+        }
+
+        private void QueryQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            var page = new QueryQuestions(new QuestionsRepository());
+            frame.NavigationService.Navigate(page);
+        }
     }
 }

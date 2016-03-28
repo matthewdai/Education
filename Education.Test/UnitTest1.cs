@@ -20,7 +20,9 @@ namespace Education.Test
 
             var ss = repo.GetQuestions(filter);
 
-            Assert.AreEqual(ss.Count(), 1);
+            var count = ss.Count();
+
+            Assert.AreEqual(count > 0, true);
 
         }
 
@@ -31,7 +33,10 @@ namespace Education.Test
             var q = new ChoiceQuestion();
             q.Question = "Where were you born?";
 
-            q.Choices = new List<string>() { "ChangSha", "Shaoyang", "Beijing", "Shanghai" };
+            q.Choices.Add("ChangSha");
+            q.Choices.Add("Shaoyang");
+            q.Choices.Add("Beijing");
+            q.Choices.Add("Shanghai");
 
             q.Answer = "Shaoyang";
 

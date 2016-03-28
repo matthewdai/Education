@@ -18,11 +18,14 @@ namespace Education.Data.Concreat
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter)
+        public IEnumerable<Question> GetQuestions(FilterDefinition<BsonDocument> filter = null)
         {
             var collection = Shared.GetSharedSingleton._database.GetCollection<BsonDocument>("questions");
 
-            //FilterDefinition<BsonDocument> gfilter = Builders<BsonDocument>.Filter.Empty;
+            if (filter == null)
+            {
+                filter = Builders<BsonDocument>.Filter.Empty;
+            }
 
             var result = collection.Find(filter).ToList();
 
