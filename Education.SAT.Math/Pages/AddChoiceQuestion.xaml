@@ -17,7 +17,7 @@
 
         <StackPanel Grid.Row="1">
             <Label>Question</Label>
-            <TextBox Style="{StaticResource questionTextBoxStyle}" Text="{Binding Question}"></TextBox>
+            <TextBox Style="{StaticResource questionTextBoxStyle}" Text="{Binding Question.Question}"></TextBox>
 
             <Label>Choice 1</Label>
             <TextBox Text="{Binding Choices[0]}"></TextBox>
@@ -35,7 +35,7 @@
             <TextBox Text="{Binding Choices[4]}"></TextBox>
 
             <Label>Correct Answer</Label>
-            <TextBox></TextBox>
+            <TextBox Text="{Binding Question.Answer}"></TextBox>
 
         </StackPanel>
 

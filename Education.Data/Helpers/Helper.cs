@@ -21,6 +21,14 @@ namespace Education.Data.Helpers
 
             q.Question = data.GetValue("Question").ToString();
 
+            var d = data.GetValue("Choices") as BsonArray;
+            foreach (var item in d)
+            {
+                q.Choices.Add(item.ToString());
+            }
+
+            q.Answer = data.GetValue("Answer").ToString();
+
             return q;
 
         }

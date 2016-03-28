@@ -80,10 +80,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\QueryQuestions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BsonDocumentViewModel.cs" />
+    <Compile Include="Models\ChoiceQuestionViewModel.cs" />
     <Compile Include="Pages\AddChoiceQuestion.xaml.cs">
       <DependentUpon>AddChoiceQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QueryQuestions.xaml.cs">
+      <DependentUpon>QueryQuestions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

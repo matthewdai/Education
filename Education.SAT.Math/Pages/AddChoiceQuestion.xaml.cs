@@ -1,5 +1,7 @@
-﻿using Education.Data.Abstracts;
+﻿using Education.Data;
+using Education.Data.Abstracts;
 using Education.Data.Concreat;
+using Education.SAT.Math.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,28 +24,32 @@ namespace Education.SAT.Math.Pages
     /// </summary>
     public partial class AddChoiceQuestion : Page
     {
-        private Question _Question;
+        private IQuestionsRepository _Repository;
+        private ChoiceQuestionViewModel _Question;
 
 
-        public AddChoiceQuestion()
+        public AddChoiceQuestion(IQuestionsRepository repository)
         {
             InitializeComponent();
+
+            _Repository = repository;
 
             this.Loaded += AddChoiceQuestion_Loaded;
         }
 
         private void AddChoiceQuestion_Loaded(object sender, RoutedEventArgs e)
         {
-            _Question = new ChoiceQuestion() {
-                Choices = new string[5],                // set up to 5 choices in the question
-            };
+            _Question = new ChoiceQuestionViewModel();
 
             this.DataContext = _Question;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            var d = _Question;
+            var q = _Question.GetQuestion();
+
+            _Repository.AddQuestion(q);
+
         }
     }
 }

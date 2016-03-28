@@ -11,8 +11,14 @@ namespace Education.Data.Concreat
     {
         public string Question { get; set; }
 
-        public List<string> Choices { get; set; }
 
+        private List<string> mChoices = new List<string>();
+        public List<string> Choices {
+            get {
+                return mChoices;
+            }
+        }
+        
         public string Answer { get; set; }
     }
 }
