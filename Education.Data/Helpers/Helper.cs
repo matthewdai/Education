@@ -17,17 +17,24 @@ namespace Education.Data.Helpers
             var q = new ChoiceQuestion();
                        
 
-            q.id = data.GetValue("_id").ToString();
+            q.id = data.GetValue("_id").AsObjectId.ToString();
 
-            q.Question = data.GetValue("Question").ToString();
+            q.Question = data.GetValue("Question").AsString;
 
             var d = data.GetValue("Choices") as BsonArray;
             foreach (var item in d)
             {
-                q.Choices.Add(item.ToString());
+                q.Choices.Add(item.AsString);
             }
 
-            q.Answer = data.GetValue("Answer").ToString();
+
+            q.Answer = data.GetValue("Answer").AsString;
+
+            BsonValue bValue;
+            if (data.TryGetValue("Difficulty", out bValue))
+            {
+                q.Difficulty = (Difficulty)Enum.Parse(typeof(Difficulty), bValue.AsString);
+            }
 
             return q;
 

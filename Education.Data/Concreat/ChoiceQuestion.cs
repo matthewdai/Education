@@ -20,5 +20,12 @@ namespace Education.Data.Concreat
         }
         
         public string Answer { get; set; }
+
+
+        /// <summary>
+        /// Gets and set the difficulity level
+        /// </summary>
+        public Difficulty Difficulty { get; set; }
+
     }
 }

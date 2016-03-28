@@ -14,8 +14,12 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Question}" Width="100" TextWrapping="Wrap" />
-                        <ListBox ItemsSource="{Binding Choices}" Width="100" BorderThickness="0" IsEnabled="False" Background="Transparent"/>
+                        <ListBox ItemsSource="{Binding Choices}" Width="100" BorderThickness="0" IsEnabled="False" Background="Transparent">
+                            
+                        </ListBox>
                         <TextBlock Text="{Binding Answer}" Width="100" />
+
+                        <TextBlock Text="{Binding Difficulty}" Width="100" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
