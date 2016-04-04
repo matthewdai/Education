@@ -9,7 +9,7 @@ using MongoDB.Driver;
 
 namespace Education.Data.Concreat
 {
-    public class QuestionsRepository : IQuestionsRepository
+    internal class QuestionsRepository : IQuestionsRepository
     {
 
 

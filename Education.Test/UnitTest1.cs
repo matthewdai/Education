@@ -5,20 +5,23 @@ using System.Linq;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Collections.Generic;
+using Education.Data;
+using Education.Data.Abstracts;
 
 namespace Education.Test
 {
     [TestClass]
     public class UnitTest1
     {
+        private IQuestionsRepository _Reporitory = Factory.GetReporitory();
+
+
         [TestMethod]
         public void Test_QueryQuestions()
         {
-            var repo = new QuestionsRepository();
-
             var filter = Builders<BsonDocument>.Filter.Empty;
 
-            var ss = repo.GetQuestions(filter);
+            var ss = _Reporitory.GetQuestions(filter);
 
             var count = ss.Count();
 
@@ -40,9 +43,7 @@ namespace Education.Test
 
             q.Answer = "Shaoyang";
 
-            var repo = new QuestionsRepository();
-
-            repo.AddQuestion(q);
+            _Reporitory.AddQuestion(q);
 
         }
 

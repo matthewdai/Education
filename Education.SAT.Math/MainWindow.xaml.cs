@@ -1,4 +1,5 @@
 ﻿using Education.Data;
+using Education.Data.Abstracts;
 using Education.Data.Concreat;
 using Education.SAT.Math.Pages;
 using System;
@@ -23,6 +24,8 @@ namespace Education.SAT.Math
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IQuestionsRepository _Reporitory;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,19 +35,25 @@ namespace Education.SAT.Math
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            _Reporitory = Factory.GetReporitory();
         }
 
 
         private void AddQuestion_Click(object sender, RoutedEventArgs e)
         {
-            var page = new AddChoiceQuestion(new QuestionsRepository());
+            var page = new AddChoiceQuestion(_Reporitory);
             frame.NavigationService.Navigate(page);
         }
 
         private void QueryQuestion_Click(object sender, RoutedEventArgs e)
         {
-            var page = new QueryQuestions(new QuestionsRepository());
+            var page = new QueryQuestions(_Reporitory);
             frame.NavigationService.Navigate(page);
+        }
+
+        private void Practice_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

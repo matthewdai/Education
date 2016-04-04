@@ -16,9 +16,10 @@
         <Menu>
             <MenuItem Header="Add Question" Click="AddQuestion_Click" />
             <MenuItem Header="Query Question" Click="QueryQuestion_Click" />
+            <MenuItem Header="Practice" Click="Practice_Click" />
         </Menu>
-        
-        <Frame x:Name="frame" Grid.Row="1" Padding="10 0"></Frame>
+
+        <Frame x:Name="frame" Grid.Row="1" />
     </Grid>
     
 </Window>
