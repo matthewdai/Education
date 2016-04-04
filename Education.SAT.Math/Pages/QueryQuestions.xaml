@@ -4,25 +4,50 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Education.SAT.Math.Pages"
+      xmlns:converters="clr-namespace:Education.SAT.Math.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="QueryQuestions">
 
+    <Page.Resources>
+        <converters:ListToTextConverter x:Key="listToTextConverter" />
+    </Page.Resources>
+
     <Grid>
-        <ListBox ItemsSource="{Binding}">
+        <!--<ListBox ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Question}" Width="100" TextWrapping="Wrap" />
-                        <ListBox ItemsSource="{Binding Choices}" Width="100" BorderThickness="0" IsEnabled="False" Background="Transparent">
-                            
-                        </ListBox>
+                        <TextBlock Text="{Binding id}" Width="170" />
+                        <TextBlock Text="{Binding Question}" Width="200" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Choices, Converter={StaticResource listToTextConverter}}" Width="100" />
                         <TextBlock Text="{Binding Answer}" Width="100" />
-
-                        <TextBlock Text="{Binding Difficulty}" Width="100" />
+                        <TextBlock Text="{Binding Difficulty}" Width="50" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
+
+        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalGridLinesBrush="#dddddd" VerticalGridLinesBrush="#dddddd">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding id}" Width="170" />
+                        <TextBlock Text="{Binding Question}" Width="200" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Choices, Converter={StaticResource listToTextConverter}}" Width="100" />
+                        <TextBlock Text="{Binding Answer}" Width="100" />
+                        <TextBlock Text="{Binding Difficulty}" Width="50" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding Question}" Header="Question" />
+                <DataGridTextColumn Binding="{Binding Choices, Converter={StaticResource listToTextConverter}}" Header="Choices"/>
+                <DataGridTextColumn Binding="{Binding Answer}" Header="Answer"/>
+                <DataGridTextColumn Binding="{Binding Difficulty}" Header="Difficulty"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>
